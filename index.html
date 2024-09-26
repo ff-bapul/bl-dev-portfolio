@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Technical Lead Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+        }
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="root">
+        <header class="gradient-bg text-white py-10 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://via.placeholder.com/150" alt="John Doe" class="w-20 h-20 rounded-full border-4 border-white shadow-lg mr-4">
+                    <div>
+                        <h1 class="text-3xl font-bold">John Doe</h1>
+                        <p class="text-xl">Technical Lead &amp; Software Architect</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors"><i class="fas fa-envelope fa-2x"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <section class="mb-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">About Me</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Experienced Technical Lead with 10+ years in software development. Passionate about building scalable, 
+                            efficient systems and leading high-performing teams. Proven track record in delivering complex projects 
+                            on time and within budget. Adept at bridging the gap between technical and non-technical stakeholders.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Skills</h2>
+                        <div id="skills-container" class="flex flex-wrap gap-2">
+                            <!-- Skills will be dynamically inserted here -->
+                        </div>
+                    </section>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">Key Projects</h2>
+                    <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Projects will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="gradient-bg text-white py-6 px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="max-w-7xl mx-auto text-center">
+                <p>&copy; 2024 John Doe. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle" class="text-2xl font-semibold mb-4"></h2>
+            <p id="modalDescription" class="mb-4"></p>
+            <div id="modalDetails" class="text-sm text-gray-600"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skills = ['JavaScript', 'Python', 'Node.js', 'React', 'AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Agile/Scrum', 'MongoDB', 'SQL', 'Git', 'Machine Learning', 'Data Analysis', 'System Design'];
+            const projects = [
+                { 
+                    title: 'Enterprise CRM System', 
+                    description: 'Led the development of a scalable CRM system serving 1M+ users.', 
+                    icon: 'fa-solid fa-building',
+                    details: 'Implemented microservices architecture using Node.js and Docker. Utilized AWS for scalable cloud infrastructure. Integrated machine learning for predictive analytics. Achieved 99.99% uptime and reduced customer churn by 15%. Led a team of 12 developers and coordinated with multiple stakeholders to ensure project success.'
+                },
+                { 
+                    title: 'AI-Powered Analytics Platform', 
+                    description: 'Architected and implemented an analytics platform using machine learning algorithms.', 
+                    icon: 'fa-solid fa-brain',
+                    details: 'Developed using Python and TensorFlow. Implemented real-time data processing with Apache Kafka. Deployed on Kubernetes for high availability and scalability. The platform processes over 1 billion events daily, providing real-time insights to over 100 enterprise clients. Reduced data processing time by 40% and improved prediction accuracy by 25%.'
+                },
+                { 
+                    title: 'Microservices Migration', 
+                    description: 'Successfully migrated a monolithic application to a microservices architecture.', 
+                    icon: 'fa-solid fa-network-wired',
+                    details: 'Broke down legacy monolith into 20+ microservices. Implemented service mesh using Istio. Achieved 99.99% uptime and 30% improvement in response times. The migration was completed with zero downtime and resulted in a 50% reduction in deployment time. This project significantly improved the company\'s ability to scale individual services and reduced time-to-market for new features.'
+                },
+                { 
+                    title: 'Blockchain-based Supply Chain Solution', 
+                    description: 'Developed a blockchain solution for supply chain transparency.', 
+                    icon: 'fa-solid fa-link',
+                    details: 'Utilized Hyperledger Fabric to create a permissioned blockchain network. Integrated IoT devices for real-time tracking. Improved supply chain visibility by 80% and reduced fraud incidents by 60%. The solution is now used by 5 Fortune 500 companies in their global supply chain operations.'
+                },
+                { 
+                    title: 'Cloud Migration Strategy', 
+                    description: 'Led the company-wide initiative to migrate on-premise infrastructure to the cloud.', 
+                    icon: 'fa-solid fa-cloud',
+                    details: 'Designed and implemented a multi-cloud strategy using AWS and Azure. Utilized infrastructure-as-code with Terraform. Achieved 40% cost reduction and improved disaster recovery capabilities. The migration was completed 2 months ahead of schedule and under budget.'
+                },
+                { 
+                    title: 'Real-time Recommendation Engine', 
+                    description: 'Built a real-time recommendation engine for an e-commerce platform.', 
+                    icon: 'fa-solid fa-shopping-cart',
+                    details: 'Developed using Apache Spark and Kafka for real-time processing. Implemented collaborative filtering algorithms. Increased conversion rates by 25% and average order value by 15%. The engine processes user behavior in real-time and provides personalized recommendations to over 5 million daily active users.'
+                },
+                { 
+                    title: 'Automated CI/CD Pipeline', 
+                    description: 'Implemented a fully automated CI/CD pipeline for the entire engineering department.', 
+                    icon: 'fa-solid fa-rocket',
+                    details: 'Utilized Jenkins, Docker, and Kubernetes for end-to-end automation. Implemented automated testing and security scanning. Reduced deployment time from days to minutes and increased deployment frequency by 300%. This project significantly improved the development team\'s productivity and software quality.'
+                },
+                { 
+                    title: 'IoT-based Smart City Solution', 
+                    description: 'Architected an IoT platform for smart city management.', 
+                    icon: 'fa-solid fa-city',
+                    details: 'Designed a scalable IoT architecture using MQTT protocol. Implemented real-time data analytics using Apache Flink. The solution now manages over 100,000 IoT devices across 3 major cities, optimizing traffic flow, energy consumption, and waste management. Resulted in a 20% reduction in energy costs and 30% improvement in traffic congestion.'
+                },
+                { 
+                    title: 'Natural Language Processing Tool', 
+                    description: 'Developed an NLP tool for sentiment analysis and entity recognition.', 
+                    icon: 'fa-solid fa-language',
+                    details: 'Utilized Python and the spaCy library for advanced NLP tasks. Implemented deep learning models using PyTorch. The tool achieves 95% accuracy in sentiment analysis and is used by the company\'s customer service department to analyze millions of customer interactions, improving response times and customer satisfaction.'
+                },
+                { 
+                    title: 'Cybersecurity Enhancement Project', 
+                    description: 'Led a company-wide initiative to enhance cybersecurity measures.', 
+                    icon: 'fa-solid fa-shield-alt',
+                    details: 'Implemented a zero-trust security model. Deployed advanced threat detection systems using AI. Conducted regular penetration testing and security audits. This project resulted in a 70% reduction in security incidents and achieved compliance with GDPR and CCPA regulations.'
+                }
+                // ... Add more projects as needed to reach 20
+            ];
+
+            const skillsContainer = document.getElementById('skills-container');
+            skills.forEach(skill => {
+                const skillBadge = document.createElement('span');
+                skillBadge.className = 'skill-badge bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full';
+                skillBadge.textContent = skill;
+                skillsContainer.appendChild(skillBadge);
+            });
+
+            const projectsContainer = document.getElementById('projects-container');
+            projects.forEach((project, index) => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'card bg-white rounded-lg shadow-md overflow-hidden';
+                projectCard.innerHTML = `
+                    <div class="p-4">
+                        <div class="flex items-center mb-2">
+                            <i class="${project.icon} text-2xl text-blue-600 mr-3"></i>
+                            <h3 class="text-lg font-semibold text-gray-900">${project.title}</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">${project.description}</p>
+                    </div>
+                `;
+                projectCard.addEventListener('click', () => showProjectDetails(index));
+                projectsContainer.appendChild(projectCard);
+            });
+
+            // Modal functionality
+            const modal = document.getElementById("projectModal");
+            const span = document.getElementsByClassName("close")[0];
+
+            function showProjectDetails(index) {
+                const project = projects[index];
+                document.getElementById("modalTitle").textContent = project.title;
+                document.getElementById("modalDescription").textContent = project.description;
+                document.getElementById("modalDetails").textContent = project.details;
+                modal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
