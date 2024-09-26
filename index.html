@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Technical Lead Portfolio</title>
+    <title>Bapu Labade - Technical Lead Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -69,16 +69,16 @@
         <header class="gradient-bg text-white py-10 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <img src="https://via.placeholder.com/150" alt="John Doe" class="w-20 h-20 rounded-full border-4 border-white shadow-lg mr-4">
+                    <img src="https://via.placeholder.com/150" alt="Bapu Labade" class="w-20 h-20 rounded-full border-4 border-white shadow-lg mr-4">
                     <div>
-                        <h1 class="text-3xl font-bold">John Doe</h1>
-                        <p class="text-xl">Technical Lead &amp; Software Architect</p>
+                        <h1 class="text-3xl font-bold">Bapu Labade</h1>
+                        <p class="text-xl">Technical Lead & Associate Solutions Architect</p>
                     </div>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-github fa-2x"></i></a>
-                    <a href="#" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin fa-2x"></i></a>
-                    <a href="#" class="text-white hover:text-gray-200 transition-colors"><i class="fas fa-envelope fa-2x"></i></a>
+                    <a href="https://github.com/bapu-labade" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/bapu-l-a3662841/" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="mailto:bapu.labade76@gmail.com" class="text-white hover:text-gray-200 transition-colors"><i class="fas fa-envelope fa-2x"></i></a>
                 </div>
             </div>
         </header>
@@ -89,17 +89,24 @@
                     <section class="mb-8">
                         <h2 class="text-2xl font-semibold text-gray-900 mb-4">About Me</h2>
                         <p class="text-gray-700 leading-relaxed">
-                            Experienced Technical Lead with 10+ years in software development. Passionate about building scalable, 
-                            efficient systems and leading high-performing teams. Proven track record in delivering complex projects 
-                            on time and within budget. Adept at bridging the gap between technical and non-technical stakeholders.
+                            Results-driven Technical Leader and Full-Stack Engineer with 12+ years of experience in cloud solutions, SaaS platforms, and enterprise applications. Proven track record in leading teams and driving digital transformation, focusing on scalability, efficiency, and automation.
                         </p>
                     </section>
 
-                    <section>
+                    <section class="mb-8">
                         <h2 class="text-2xl font-semibold text-gray-900 mb-4">Skills</h2>
                         <div id="skills-container" class="flex flex-wrap gap-2">
                             <!-- Skills will be dynamically inserted here -->
                         </div>
+                    </section>
+
+                    <!-- New Education Section -->
+                    <section class="mb-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Education</h2>
+                        <ul class="text-gray-700 leading-relaxed">
+                            <li><strong>M.Sc Computer Science (MCS)</strong>, Fergusson College, University of Pune (2012)</li>
+                            <li><strong>Bachelor of Science in Computer Science</strong>, New Arts College, University of Pune (2010)</li>
+                        </ul>
                     </section>
                 </div>
 
@@ -114,7 +121,7 @@
 
         <footer class="gradient-bg text-white py-6 px-4 sm:px-6 lg:px-8 mt-12">
             <div class="max-w-7xl mx-auto text-center">
-                <p>&copy; 2024 John Doe. All rights reserved.</p>
+                <p>&copy; 2024 Bapu Labade. All rights reserved.</p>
             </div>
         </footer>
     </div>
@@ -131,69 +138,51 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const skills = ['JavaScript', 'Python', 'Node.js', 'React', 'AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Agile/Scrum', 'MongoDB', 'SQL', 'Git', 'Machine Learning', 'Data Analysis', 'System Design'];
+            const skills = [
+                'Python', 'JavaScript', 'Node.js', 'TypeScript', 'ReactJS', 'Java', 
+                'C++', 'Golang', 'Ruby on Rails', 'Flask', 'Fastify', 'FastAPI', 'Django', 
+                'AWS', 'Azure', 'Google Cloud', 'PostgreSQL', 'MongoDB', 'MySQL', 
+                'Redis', 'ClickHouse', 'DynamoDB', 'Databricks', 'Airflow', 'Event-Driven Architecture',
+                'Docker', 'Kubernetes', 'Jenkins', 'Terraform', 'CI/CD', 'Machine Learning', 'AI/ML'
+            ];
+
             const projects = [
                 { 
-                    title: 'Enterprise CRM System', 
-                    description: 'Led the development of a scalable CRM system serving 1M+ users.', 
-                    icon: 'fa-solid fa-building',
-                    details: 'Implemented microservices architecture using Node.js and Docker. Utilized AWS for scalable cloud infrastructure. Integrated machine learning for predictive analytics. Achieved 99.99% uptime and reduced customer churn by 15%. Led a team of 12 developers and coordinated with multiple stakeholders to ensure project success.'
-                },
-                { 
-                    title: 'AI-Powered Analytics Platform', 
-                    description: 'Architected and implemented an analytics platform using machine learning algorithms.', 
-                    icon: 'fa-solid fa-brain',
-                    details: 'Developed using Python and TensorFlow. Implemented real-time data processing with Apache Kafka. Deployed on Kubernetes for high availability and scalability. The platform processes over 1 billion events daily, providing real-time insights to over 100 enterprise clients. Reduced data processing time by 40% and improved prediction accuracy by 25%.'
-                },
-                { 
-                    title: 'Microservices Migration', 
-                    description: 'Successfully migrated a monolithic application to a microservices architecture.', 
-                    icon: 'fa-solid fa-network-wired',
-                    details: 'Broke down legacy monolith into 20+ microservices. Implemented service mesh using Istio. Achieved 99.99% uptime and 30% improvement in response times. The migration was completed with zero downtime and resulted in a 50% reduction in deployment time. This project significantly improved the company\'s ability to scale individual services and reduced time-to-market for new features.'
-                },
-                { 
-                    title: 'Blockchain-based Supply Chain Solution', 
-                    description: 'Developed a blockchain solution for supply chain transparency.', 
-                    icon: 'fa-solid fa-link',
-                    details: 'Utilized Hyperledger Fabric to create a permissioned blockchain network. Integrated IoT devices for real-time tracking. Improved supply chain visibility by 80% and reduced fraud incidents by 60%. The solution is now used by 5 Fortune 500 companies in their global supply chain operations.'
-                },
-                { 
-                    title: 'Cloud Migration Strategy', 
-                    description: 'Led the company-wide initiative to migrate on-premise infrastructure to the cloud.', 
+                    title: 'Azure-to-AWS Cloud Migration', 
+                    description: 'Led the migration from Azure to AWS, boosting scalability and reducing infrastructure costs by 35%.', 
                     icon: 'fa-solid fa-cloud',
-                    details: 'Designed and implemented a multi-cloud strategy using AWS and Azure. Utilized infrastructure-as-code with Terraform. Achieved 40% cost reduction and improved disaster recovery capabilities. The migration was completed 2 months ahead of schedule and under budget.'
+                    details: 'Architected and led the migration process, implementing scalable infrastructure on AWS. Reduced infrastructure costs by 35% and improved cloud performance, while maintaining zero downtime.'
                 },
                 { 
-                    title: 'Real-time Recommendation Engine', 
-                    description: 'Built a real-time recommendation engine for an e-commerce platform.', 
-                    icon: 'fa-solid fa-shopping-cart',
-                    details: 'Developed using Apache Spark and Kafka for real-time processing. Implemented collaborative filtering algorithms. Increased conversion rates by 25% and average order value by 15%. The engine processes user behavior in real-time and provides personalized recommendations to over 5 million daily active users.'
+                    title: 'Data Ingestion Pipeline & Analytics Dashboard', 
+                    description: 'Built a pipeline that accelerated customer onboarding by 50% and scaled to support millions of records.', 
+                    icon: 'fa-solid fa-database',
+                    details: 'Developed a data ingestion pipeline that streamlined customer onboarding processes and scaled to support millions of records. Built an analytics dashboard for real-time insights and visualization.'
                 },
                 { 
-                    title: 'Automated CI/CD Pipeline', 
-                    description: 'Implemented a fully automated CI/CD pipeline for the entire engineering department.', 
-                    icon: 'fa-solid fa-rocket',
-                    details: 'Utilized Jenkins, Docker, and Kubernetes for end-to-end automation. Implemented automated testing and security scanning. Reduced deployment time from days to minutes and increased deployment frequency by 300%. This project significantly improved the development team\'s productivity and software quality.'
+                    title: 'High-Performance Recalculation Engine', 
+                    description: 'Designed a high-performance recalculation engine for a carbon accounting platform.', 
+                    icon: 'fa-solid fa-calculator',
+                    details: 'Developed an engine capable of handling millions of data points, optimized for performance and cost efficiency. The engine improved system speed by 30% and reduced resource consumption.'
                 },
-                { 
-                    title: 'IoT-based Smart City Solution', 
-                    description: 'Architected an IoT platform for smart city management.', 
-                    icon: 'fa-solid fa-city',
-                    details: 'Designed a scalable IoT architecture using MQTT protocol. Implemented real-time data analytics using Apache Flink. The solution now manages over 100,000 IoT devices across 3 major cities, optimizing traffic flow, energy consumption, and waste management. Resulted in a 20% reduction in energy costs and 30% improvement in traffic congestion.'
+                {
+                    title: 'Home Energy Report System',
+                    description: 'Enhanced performance for the Home Energy Report project, accelerating deployment by 40%.',
+                    icon: 'fa-solid fa-bolt',
+                    details: 'Led development of key features, optimized system performance, and automated key processes. The solution improved energy report generation times and system responsiveness.'
                 },
-                { 
-                    title: 'Natural Language Processing Tool', 
-                    description: 'Developed an NLP tool for sentiment analysis and entity recognition.', 
-                    icon: 'fa-solid fa-language',
-                    details: 'Utilized Python and the spaCy library for advanced NLP tasks. Implemented deep learning models using PyTorch. The tool achieves 95% accuracy in sentiment analysis and is used by the company\'s customer service department to analyze millions of customer interactions, improving response times and customer satisfaction.'
+                {
+                    title: 'Self-Service Data Ingestion Platform',
+                    description: 'Built a self-service data ingestion pipeline for customer data sync with high scalability.',
+                    icon: 'fa-solid fa-sync-alt',
+                    details: 'Designed a self-service platform for seamless customer data sync. The system improved data consistency and reduced manual intervention, supporting millions of records.'
                 },
-                { 
-                    title: 'Cybersecurity Enhancement Project', 
-                    description: 'Led a company-wide initiative to enhance cybersecurity measures.', 
-                    icon: 'fa-solid fa-shield-alt',
-                    details: 'Implemented a zero-trust security model. Deployed advanced threat detection systems using AI. Conducted regular penetration testing and security audits. This project resulted in a 70% reduction in security incidents and achieved compliance with GDPR and CCPA regulations.'
+                {
+                    title: 'Castlight Health Performance Optimization',
+                    description: 'Addressed system bottlenecks, improving customer integration and system performance.',
+                    icon: 'fa-solid fa-chart-line',
+                    details: 'Resolved performance bottlenecks and improved customer integration processes, resulting in smoother operations and enhanced system scalability.'
                 }
-                // ... Add more projects as needed to reach 20
             ];
 
             const skillsContainer = document.getElementById('skills-container');
